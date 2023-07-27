@@ -1,19 +1,16 @@
 package Graph;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
+import Map.Map;
+import LinearDataStructures.Queue;
 import java.util.Set;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Queue;
+import LinearDataStructures.LinkedList;
 
 public class Graph<V, E> {
 
     private Map<V, LinkedList<E>> map;
 
     public Graph() {
-        map = new HashMap<>();
+        this.map = new Map<>();
     }
 
     public void addVertex(V key) {
@@ -67,7 +64,7 @@ public class Graph<V, E> {
         LinkedList<LinkedList<V>> total_paths = new LinkedList<>();
         int total_paths_count = 0;
         // Create a queue to store the visited nodes and paths.
-        Queue<LinkedList<V>> paths = new LinkedList<>();
+        Queue<LinkedList<V>> paths = new Queue<>();
         
         // Add the starting node to the visited nodes and paths.
         LinkedList<V> startPath = new LinkedList<>();

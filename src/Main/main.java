@@ -15,6 +15,7 @@ public class main {
 
         graph.listVertex(); // ! Esto se imprime en consola
 
+        graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("A", "D");
         graph.addEdge("D", "C");
