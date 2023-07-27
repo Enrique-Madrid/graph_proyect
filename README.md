@@ -83,40 +83,11 @@ Esta clase tendría los siguientes métodos:
 
 `` A path in a graph G is a sequence of vertices v1, v2, . . . , vn such that (vi,vi+1) is an edge in G for all i = 1, 2, . . . , n − 1. The length of a path is the number of edges in the path. A path is simple if all the vertices in the path are distinct. A cycle in a graph G is a path of length at least 1 in which the first and last vertices are the same. A graph is acyclic if it has no cycles. ``
 
-Para evitar que el método path se vuelva recursivo, usaremos un método auxiliar que nos permita recorrer el grafo y encontrar el camino más corto entre dos vertices.
+Este método tendra un linkedlist de vertices, el cual será el camino que se debe seguir para llegar desde el vertice origen hasta el vertice destino.
 
-Por los momentos usaremos un linked list para almacenar los vertices que ya han sido visitados y tambien usaremos un linked list para almacenar los caminos posibles entre dos vertices.
+Se creará un LinkedList llamado total_paths que almacenará los caminos totales que se pueden seguir para llegar desde el vertice origen hasta el vertice destino.
 
-#### Método Auxiliar
-
-`` A graph G is connected if there is a path from every vertex to every other vertex in G. A graph G is strongly connected if there is a path from every vertex to every other vertex in G, and there is also a path from every vertex to every other vertex in the reverse direction. ``
-
-Para encontrar el camino más corto entre dos vertices, usaremos el algoritmo de Dijkstra.
-
-`` Dijkstra’s algorithm is a method for finding the shortest path between two vertices in a graph. The algorithm works only for graphs with nonnegative edge weights. The algorithm maintains a set S of vertices whose final shortest-path weights from the source s have already been determined. The algorithm repeatedly selects the vertex u ∈ V − S with the minimum shortest-path estimate, adds u to S, and relaxes all edges leaving u. The algorithm maintains the following loop invariant: At the start of each iteration of the while loop, the set S contains the vertices whose final shortest-path weights from the source s have already been determined. ``
-
-Para implementar el algoritmo de Dijkstra, usaremos una cola de prioridad, la cual nos permitirá ordenar los vertices por su peso.
-
-`` A priority queue is a queue in which each element is assigned a priority and elements are removed from the queue according to their priority. ``
-
-Para implementar la cola de prioridad, usaremos una clase Priority Queue, la cual nos permitirá ordenar los vertices por su peso.
-
-`` A priority queue is a queue in which each element is assigned a priority and elements are removed from the queue according to their priority. ``
-
-
-
-
-### Class JSON
-
-Empezamos con la clase JSON, la cuál sera la encargada de guardar los vertices y aristas en un archivo JSON.
-
-Por los momentos usaremos el paquete Map, el cual nos permite crear un mapa de objetos, en este caso, un mapa de vertices y aristas.
-
-
-
-
-
-### ...
+Se creará un Queue llamado path que almacenará los caminos que se van siguiendo para llegar desde el vertice origen hasta el vertice destino.
 
 ### Class Map
 
@@ -136,23 +107,7 @@ Según lo esperado, la clase Mapa debe tener los siguientes métodos:
 | keySet() | Set< K > |
 | values() | Collection< V > |
 
-Para crear la clase Mapa, primero debemos crear la Value Class, la cual será la encargada de almacenar los valores de los vertices y aristas.
+Para crear la clase Mapa, primero debemos crear la Entry Class, la cual será la encargada de almacenar los valores de los vertices y aristas o en otras palabras, el key y el value.
 
-### Class Value
-
-`` A value class is a class whose main purpose is to hold data. Value classes are final, immutable, and have no identity. They are final because they are not designed to be extended. They are immutable because they have no setter methods. They have no identity because two value objects with the same values are considered equal.``
-
-La clase Value debe tener los siguientes métodos:
-
-| Method | Return Value |
-| ------ | ------ |
-| getValue() | V |
-| setValue(V value) | void |
-
-Y tendrá los siguientes atributos:
-
-| Attribute | Type |
-| ------ | ------ |
-| value | V |
-
+Esta clase la crearemos como una clase privada dentro de la clase Mapa.
 
