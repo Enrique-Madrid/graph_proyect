@@ -1,3 +1,23 @@
 add vertex B
 add vertex A
 add vertex V
+add vertex A
+add vertex B
+add vertex C
+list vertex
+add edge A B
+add edge A C
+list edge A
+path A B
+add vertex A
+add vertex B
+add vertex C
+list vertex
+add edge A B
+add edge A C
+list edge A
+path A B
+help
+add vertex G
+add edge C G
+path A G

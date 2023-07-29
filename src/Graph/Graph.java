@@ -75,12 +75,9 @@ public class Graph<V, E> {
         while (!paths.isEmpty()) {
             LinkedList<V> visited = paths.poll();
 
-            System.out.println("Current path: " + visited);
-
             // Get the last node in the current path.
             V last = visited.get(visited.size() - 1);
-            System.out.println("Current node: " + last);
-
+            
             // If the goal is reached, print the complete path and terminate.
             if (last.equals(end)) {
                 total_paths.add(visited);
