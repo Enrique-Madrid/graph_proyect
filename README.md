@@ -111,3 +111,4 @@ Para crear la clase Mapa, primero debemos crear la Entry Class, la cual será la
 
 Esta clase la crearemos como una clase privada dentro de la clase Mapa.
 
+También creamos la clase Vertex y Edge
